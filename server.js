@@ -4,7 +4,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(__dirname)); // Serve all files from current directory
 
 // Route to serve index.html
 app.get('/', (req, res) => {
@@ -49,26 +49,22 @@ const RESPONSES = {
   ]
 };
 
+// POST route for chatbot interaction
 app.post('/chat', (req, res) => {
   const msg = req.body.message.toLowerCase();
   let response;
 
   if (/hi|hello|hey|greetings/i.test(msg)) {
     response = RESPONSES.greetings[Math.floor(Math.random() * RESPONSES.greetings.length)];
-  }
-  else if (/contact|talk|reach|number|call|dm|whatsapp|instagram/i.test(msg)) {
+  } else if (/contact|talk|reach|number|call|dm|whatsapp|instagram/i.test(msg)) {
     response = RESPONSES.contact[Math.floor(Math.random() * RESPONSES.contact.length)];
-  }
-  else if (/box|fight|profession|career|match/i.test(msg)) {
+  } else if (/box|fight|profession|career|match/i.test(msg)) {
     response = RESPONSES.profession[Math.floor(Math.random() * RESPONSES.profession.length)];
-  }
-  else if (/soccer|football|play|game|team/i.test(msg)) {
+  } else if (/soccer|football|play|game|team/i.test(msg)) {
     response = RESPONSES.soccer[Math.floor(Math.random() * RESPONSES.soccer.length)];
-  }
-  else if (/age|old|single|where|from|live|hometown/i.test(msg)) {
+  } else if (/age|old|single|where|from|live|hometown/i.test(msg)) {
     response = RESPONSES.personal[Math.floor(Math.random() * RESPONSES.personal.length)];
-  }
-  else {
+  } else {
     response = RESPONSES.default[Math.floor(Math.random() * RESPONSES.default.length)];
   }
 
@@ -78,7 +74,8 @@ app.post('/chat', (req, res) => {
   });
 });
 
+// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Max's Assistant running at http://localhost:${PORT}`);
 });

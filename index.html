@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="John Wick - Max's Personal Assistant">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="John Wick - Max's Personal Assistant" />
   <title>John Wick - Max's Assistant</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Background with dark overlay -->
+  <!-- Fullscreen Background -->
   <div id="background-container">
-    <img src="johnwick-background.jpg" id="background-image" alt="John Wick Background">
+    <img src="johnwick-background.jpg" id="background-image" alt="John Wick Background" />
     <div id="background-overlay"></div>
   </div>
 
-  <!-- Main Chat Interface -->
+  <!-- Chatbot Container -->
   <div id="chatbot-container">
     <div id="chatbox">
+      <!-- Header with Image -->
       <div id="header">
-        <img src="chat-background.jpg" id="chat-header-image" alt="Chat Header">
+        <img src="chat-background.jpg" id="chat-header-image" alt="Chat Header" />
         <div id="header-content">
           <h2>John Wick</h2>
           <span id="status-indicator">Max's Assistant</span>
         </div>
       </div>
-      
+
+      <!-- Chat Messages -->
       <div id="chat-area">
-        <div class="bot-msg">I'm John Wick, Max's personal assistant. How may I help you?</div>
+        <!-- First Bot Message (Static) -->
+        <div class="bot-msg">I am John Wick, Max’s assistant.</div>
       </div>
-      
+
+      <!-- Input Section -->
       <div id="input-container">
         <textarea id="user-input" placeholder="Message John Wick..." rows="1"></textarea>
         <button id="send-button">
           <svg width="20" height="20" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+            <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Music Control -->
+  <!-- Music Control Button -->
   <button id="music-control">
     <span id="play-icon">▶</span>
     <span>Play Theme</span>
   </button>
+
+  <!-- Theme Song -->
   <audio id="theme-song" loop>
-    <source src="theme-song.mp3" type="audio/mpeg">
+    <source src="theme-song.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
   </audio>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
